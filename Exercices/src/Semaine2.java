@@ -2,6 +2,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+// bonjour les amis!
+
 public class Semaine2 {
 	private final static float TAUX_PRIME = 0.1f;
 	public static void main(String[] args) {
