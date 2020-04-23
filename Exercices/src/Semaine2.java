@@ -3,7 +3,7 @@ import java.time.YearMonth;
 import java.util.Locale;
 import java.util.Scanner;
 
-// bonjour les amis!
+// Fichier contenant les exercices de la semaine 2 du cours Développement d'utilitaires!
 
 public class Semaine2 {
 	private final static float TAUX_PRIME = 0.1f;
