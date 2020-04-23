@@ -31,6 +31,7 @@ public class Semaine2 {
 			System.out.print("Veuillez un numéro de mois:");
 			mois = Integer.parseInt(scan.nextLine());
 			Question5_Mois_Francais(scan, mois);
+		
 			break;
 		case 6: 
 			System.out.print("Veuillez inscrire un numéro de mois:");
@@ -46,6 +47,37 @@ public class Semaine2 {
 			break;
 		case 7: 
 			MaximumNombre(scan);
+			break;
+		case 8: 
+			Statistiques3Nombre(scan);
+			break;
+		case 9:
+			PrixDuHamburger(scan);
+			break;
+		case 10:
+			CalculDeCote(scan);
+			break;
+
+		case 11:
+			AdmissibiliteExamen(scan);
+			break;
+		case 12:
+			AdmissibiliteExamen2(scan);
+			break;
+		case 13:
+			InformationSurNombre(scan);
+			break;
+		case 14:
+			VoyelleOuConsonne(scan);
+			break;
+		case 15:
+			StatistiquesAuto(scan);
+			break;
+		case 16:
+			CalculNombrePots(scan);
+			break;
+		case 17:
+			RochePapierCiseau(scan);
 			break;
 		default:
 			System.out.println("Mauvais choix!");
@@ -258,6 +290,305 @@ public class Semaine2 {
 
 		System.out.println("Le plus petit nombre est " + plusPetitNombre + " et le plus grand nombre est " + plusGrandNombre);
 	}
+
+	
+	
+	public static void Statistiques3Nombre(Scanner scan) {
+		/*
+		  Faire un programme permettant de calculer la somme et la moyenne des 3 nombres présentés.
+		  Vous devez avec des instructions simples. 
+		  Interdiction d’utiliser les fonctions mathématique Math.* pour y arriver.
+		*/
+		System.out.print("Nombre 1: ");
+		int nombre1 = Integer.parseInt(scan.nextLine());
+
+		System.out.print("Nombre 2: ");
+		int nombre2 = Integer.parseInt(scan.nextLine());
+
+		System.out.print("Nombre 3: ");
+		int nombre3 = Integer.parseInt(scan.nextLine());
+		
+		
+		
+		int somme = nombre1 + nombre2 + nombre3; // calcul de la somme
+		double moyenne = (nombre1+nombre2+nombre3)/3; // calcul de la moyenne
+
+		// affichage du resultat		
+		System.out.println("La somme est " + somme + " et la moyenne est " + moyenne);
+	}
+	
+	public static void PrixDuHamburger(Scanner scan) {
+
+		/*
+		 * Faire un programme permettant de calculer le prix du hamburger en fonction de
+		 * l'âge du participant et de la grille suivante:
+		 * 
+		 * Moins de 15 ans 1$ 
+		 * 15 à 35 ans 2$ 
+		 * 35 à 55 ans 3$ 
+		 * 55 ans et + 1$
+		 */
+		
+		System.out.print("Bonjour et bienvenue chez Ashton, quel est votre age?: ");
+		int age = Integer.parseInt(scan.nextLine());
+		double prix_hamburger;
+		if(age < 15) {
+			prix_hamburger = 1.0;
+		}else if(age < 35) {
+			prix_hamburger = 2.0;
+		}else if(age < 55) {
+			prix_hamburger = 3.0;
+		}else{
+			prix_hamburger = 1.0;				
+		}
+	
+		System.out.println("Le prix du hamburger est de " +
+								NumberFormat.getCurrencyInstance(new Locale("fr", "CA"))
+								.format(prix_hamburger));
+	}
+
+
+
+	public static void CalculDeCote(Scanner scan) {
+
+		/*
+		 * Faire un programme permettant d’attribuer une cote en fonction de la note
+		 * entrée par l’étudiant:
+		 * 
+		 * Cote Moins de 60 E 
+		 * 60 à 70 D- 
+		 * 70 à 75 D 7
+		 * 5 à 80 D+ 
+		 * 80 à 85 C 
+		 * 85 à 90 B 
+		 * 90 à 95 A 
+		 * 95 et + A+
+		 */
+		
+		System.out.print("Quelle est la valeur de la note? ");
+		double note = Double.parseDouble(scan.nextLine());
+		String cote = "";
+		if(note < 60) {
+			cote = "E";
+		}else if(note < 70) {
+			cote = "D-";
+		}else if(note < 75) {
+			cote = "D";
+		}else if(note < 80) {
+			cote = "D+";
+		}else if(note < 85) {
+			cote = "C";
+		}else if(note < 90) {
+			cote = "B";
+		}else if(note < 95) {
+			cote = "A";
+		}else{
+			cote = "A+";				
+		}
+	
+		System.out.println("Votre cote est: " + cote);
+	}
+
+	
+	public static void AdmissibiliteExamen(Scanner scan) {
+		/*
+		 * Faire un programme permettant de valider si un étudiant est admissible à l’examen synthèse.
+		 * Pour savoir si l’examen est admissible à l’examen synthèse, il doit avoir réussi l’examen 1 et l’examen 2.
+		 */
+		System.out.print("Quelle est la valeur de la note du premier examen? ");
+		double note_examen1 = Double.parseDouble(scan.nextLine());
+
+		System.out.print("Quelle est la valeur de la note du second examen? ");
+		double note_examen2 = Double.parseDouble(scan.nextLine());
+		
+	
+		// validation de l'admissibilité
+		if(note_examen1 < 60 && note_examen2 < 60) {
+			System.out.println("Malheureusement, vous n’êtes pas admissible à l’examen.");	
+		}else {
+			System.out.println("Bravo! Vous êtes admissible à l’examen.");	
+		}
+		
+	}
+
+	
+	public static void AdmissibiliteExamen2(Scanner scan) {
+		/*
+		 * Faire un programme permettant de valider si un étudiant est admissible à l’examen synthèse.
+		 * Pour savoir si l’examen est admissible à l’examen synthèse, 
+		 * il doit avoir réussi l’examen 1,l’examen 2, l’examen 3 ou l’examen 4.
+		 */
+		System.out.print("Quelle est la valeur de la note du premier examen? ");
+		float note_examen1 = Float.parseFloat(scan.nextLine());
+
+		System.out.print("Quelle est la valeur de la note du second examen? ");
+		float note_examen2 = Float.parseFloat(scan.nextLine());
+		
+		System.out.print("Quelle est la valeur de la note du troisième examen? ");
+		float note_examen3 = Float.parseFloat(scan.nextLine());
+
+		System.out.print("Quelle est la valeur de la note du quatrième examen? ");
+		float note_examen4 = Float.parseFloat(scan.nextLine());
+
+		// validation de l'admissibilité
+		if(note_examen1 >= 60 || note_examen2 >= 60 || note_examen3 >= 60 || note_examen4 >= 60) {
+			System.out.println("Bravo! Vous êtes admissible à l’examen.");	
+		}else {
+			System.out.println("Malheureusement, vous n’êtes pas admissible à l’examen.");	
+		}
+		float moyenne_cumulative = (note_examen1 + note_examen2 + note_examen3 + note_examen4)/4; 
+	}
+
+	
+	
+	public static void InformationSurNombre(Scanner scan) {
+		/*
+		 * Écrivez un programme Java qui lit un nombre et indique s'il est positif, négatif ou s'il vaut zéro 
+		 * et s'il est pair ou impair.
+		 */
+		System.out.print("Bonjour et bienvenue chez Ashton, quel est votre nombre?: ");
+		int nombre = Integer.parseInt(scan.nextLine());
+
+		// validation du pair ou impair
+		String pair_ou_impair = "";
+		if((nombre % 2) == 0) {
+			pair_ou_impair = "pair";
+		}else {
+			pair_ou_impair = "impair";
+		}
+		
+		// validation du positif/negatif/zero
+		String style_nombre = "";
+		if(nombre > 0) {
+			style_nombre = "positif";
+		}else if(nombre < 0) {
+			style_nombre = "negatif";
+		}else {
+			style_nombre = "zéro";
+		}
+		
+		System.out.println("Le nombre est " + style_nombre + " et il est (" + pair_ou_impair + ")");
+		
+	}
+
+	public static void VoyelleOuConsonne(Scanner scan) {
+		/*
+		 * Faire un programme qui lit un caractère et qui permet d’identifier s’il s’agit d’une consonne 
+		 * ou d’une voyelle. Votre programme doit également détecter lorsqu’un chiffre est passé au programme.
+		 */
+		System.out.print("Bonjour et bienvenue chez Ashton, quel est votre lettre aujourd'hui?: ");
+		char caractere = scan.nextLine().charAt(0);
+		String chiffres = "1234567890";
+		String voyelles = "aeiouy";
+		
+		
+		if(chiffres.indexOf(caractere) >= 0) {
+			System.out.println("Ceci est un caractère!");
+		}else {
+			if(voyelles.indexOf(caractere) >= 0) {
+				System.out.println("Ceci est une voyelle!");
+			}else {
+				System.out.println("Ceci est une consonne!");
+			}
+		}
+		
+	}
+	
+	public static void StatistiquesAuto(Scanner scan) {
+		/*
+			Faire un programme posant les questions suivantes:
+
+			Nombre de litres dans le réservoir
+			La quantité de litres par 100km effectuée par l’automobile
+			Le prix de l’essence au litre
+			
+			En fonction des variables données à votre programme, calculer:
+			La distance pouvant être parcourue par votre véhicule
+			Le coût pour voyager 250 kms.
+		 */
+		System.out.print("Bonjour et bienvenue chez CAA Québec, quel est le nombre de litres dans le réservoir?: ");
+		float nb_litres = Float.parseFloat(scan.nextLine());
+
+		System.out.print("La quantité de litres par 100km effectuée par l’automobile?: ");
+		float qte_100km = Float.parseFloat(scan.nextLine());
+		
+		System.out.print("Indiquer le prix de l'essence?: ");
+		float prix_essence = Float.parseFloat(scan.nextLine());
+
+		float distance_parcourue = nb_litres / qte_100km * 100;
+		float cout_km = (prix_essence/qte_100km) * 250;
+		
+		System.out.println("Résultat du calcul:");
+		System.out.println("La distance pouvant être parcourue est par votre véhicule est " + String.format("%.2f km", distance_parcourue));
+		System.out.println("Le coût pour voyager 250km est: " + NumberFormat.getCurrencyInstance(new Locale("fr", "CA"))
+		.format(cout_km));
+		
+		float note_examen1 = Float.parseFloat(scan.nextLine());
+
+		
+	}
+	
+	
+	public static void CalculNombrePots(Scanner scan) {
+		/*
+			Vous devez faire un programme qui devra calculer le nombre de pots de peinture à se procurer 
+			en fonction de la couverture en pied² à couvrir. Un pot de peinture couvre 400 pieds carrés. 
+
+			Si vous avez 600 pieds carré à couvrir, vous devrez en acheter 2 puisqu’on ne peut acheter un demi pot. 
+			Si vous avez, 300 pieds carré, vous devrez en acheter 1, etc.
+
+		 */
+		System.out.print("Bonjour et bienvenue chez Peinture inc, quel est le nombre de pieds carré à couvrir?: ");
+		int nb_pieds_carre = Integer.parseInt(scan.nextLine());
+		
+		int nb_pots = (int) Math.ceil(nb_pieds_carre/400d);
+		System.out.print("Vous aurez besoin de " + nb_pots + " pot(s)");
+	
+	}
+	
+		
+	public static void RochePapierCiseau(Scanner scan) {
+		/*
+			Il se joue entre deux joueurs, en général avec les mains. Simultanément, les deux joueurs font un signe avec les mains qui représente soit une roche, soit des ciseaux, soit un papier.
+			https://fr.wikipedia.org/wiki/Pierre-papier-ciseaux
+			
+			Nommons A et B les deux joueurs.
+			
+			Votre programme doit indiquer 1,2,3 et permettre de prendre le choix de l'utilisateur 1 et de l’utilisateur 2.
+			
+			Si les deux joueurs ont fait le même signe, on considère que c'est un cas d'égalité, aucun des deux joueurs ne marque un point.
+			Si le joueur A a joué Caillou et le joueur B Ciseaux, A gagne car "le caillou émousse les ciseaux", et réciproquement.
+			Si le joueur A a joué Papier et le joueur B Caillou, A gagne car "le papier enveloppe le caillou", et réciproquement.
+			Si le joueur A a joué Ciseaux et le joueur B Papier, A gagne car "les ciseaux coupent le papier", et réciproquement.
+		 */
+
+		System.out.println("Bonjour et bienvenue dans Roche-Papier-Ciseaux");
+		System.out.print("Veuillez inscrire le choix du joueur 1?\n"+
+						 "1- Roche\n" + 
+						 "2- Papier\n" + 
+						 "3- Ciseaux\n");
+
+		int joueur1 = Integer.parseInt(scan.nextLine());
+
+		System.out.print("Veuillez inscrire le choix du joueur 2?\n"+
+				 "1- Roche\n" + 
+				 "2- Papier\n" + 
+				 "3- Ciseaux\n");
+		int joueur2 = Integer.parseInt(scan.nextLine());
+		
+		int resultat = (joueur1 + 3 - joueur2 ) % 3 ;
+		
+		 if (resultat == 0 ) {
+		     System.out.println ("La partie est nulle!") ;
+		 } else if (resultat == 1) {
+		     System.out.println ("Le joueur 1 gagne!");
+		 } else {
+		     System.out.println ("Le joueur 2 gagne!");
+		 }
+	
+	}
+	
+	
 	
 
 }
