@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.time.YearMonth;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ public class Semaine2 {
 			break;
 		case 4: 
 			Question4(scan);
-			break;
+			break; 
 		case 5: 
 			System.out.print("Veuillez un numéro de mois:");
 			mois = Integer.parseInt(scan.nextLine());
@@ -78,6 +79,15 @@ public class Semaine2 {
 			break;
 		case 17:
 			RochePapierCiseau(scan);
+			break;
+		case 18:
+			NombrePremier(scan);
+			break;
+		case 19:
+			NombreDeJoursParMois(scan);
+			break;
+		case 20:
+			NombreDeJoursParMoisInfaillible(scan);
 			break;
 		default:
 			System.out.println("Mauvais choix!");
@@ -588,7 +598,87 @@ public class Semaine2 {
 	
 	}
 	
+	public static void NombrePremier(Scanner scan) {
+		
+		/*
+		 * Ecrire un algorithme, puis un programme en Java qui demande à l'utilisateur
+		 * d'entrer un entier positif et qui détermine si ce nombre est premier ou non.
+		 * 
+		 * On dit qu'un nombre est premier si il a pour seuls diviseurs 1 et lui-même.
+		 * Par ex : 2, 3, 5, 7, 11 sont premiers.
+		 */
+		
+		
+		System.out.print("Bonjour et bienvenue chez Mathématique inc, quel est votre nombre à vérifier?: ");
+		int nombre = Integer.parseInt(scan.nextLine());
+
+		boolean estNombrePremier = true;
+        int i = 2;
+		while(i < nombre && estNombrePremier == true) {
+            if(nombre % i == 0)
+            {
+            	estNombrePremier = false;
+            }
+            i++;
+        }
+
+        String type_nombre = (estNombrePremier) ? "premier" : "pas un nombre premier";
+    	System.out.format("Le nombre est %s.", type_nombre);
+        
+	}
+
 	
-	
+	public static void NombreDeJoursParMois(Scanner scan) {
+		/*
+		 * Faire un programme permettant de déterminer le nombre de jours dans le mois
+		 * en fonction du mois et de l’année. Attention, votre programme doit tenir
+		 * compte d’une année bisextile ou non.
+		 */
+
+		System.out.print("Inscrire le mois: ");
+		int mois = Integer.parseInt(scan.nextLine());
+
+		System.out.print("Inscrire l'année: ");
+		int annee = Integer.parseInt(scan.nextLine());
+		
+		boolean estAnneeBisextile;
+		if (annee % 4 != 0) {
+			estAnneeBisextile = false;
+		  } else if (annee % 400 == 0) {
+			  estAnneeBisextile = true;
+		  } else if (annee % 100 == 0) {
+		    estAnneeBisextile = false;
+		  } else {
+			  estAnneeBisextile = true;
+		  }		
+		
+		int nbJours = 0;
+		if(mois ==2) {
+			if(estAnneeBisextile == true) {
+				nbJours = 29;
+			}else {
+				nbJours = 28;
+			}
+		}else if(mois == 4 || mois == 6 || mois == 9 || mois == 11) {
+				nbJours = 30;
+		}else {
+			nbJours = 31;
+		}
+		
+		System.out.format("Le nombre de jour est de %d jours.", nbJours);
+	}
+
+	public static void NombreDeJoursParMoisInfaillible(Scanner scan) {
+		System.out.print("Inscrire le mois: ");
+		int mois = Integer.parseInt(scan.nextLine());
+
+		System.out.print("Inscrire l'année: ");
+		int annee = Integer.parseInt(scan.nextLine());
+		
+		java.time.YearMonth calendrier = YearMonth.of(annee, mois);
+		System.out.format("Le nombre de jour est de %d jours.", calendrier.lengthOfMonth());
+		
+
+	}
 
 }
