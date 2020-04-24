@@ -173,7 +173,6 @@ public class Semaine3 {
 
 		String texte_du_nombre = Integer.toString(nombre); // conversion du nombre en string
 		
-		
 		int nombre_de_cases = texte_du_nombre.length();
 		for(int i =  nombre_de_cases -1; i >= 0; i--) {
 			System.out.print(texte_du_nombre.charAt(i));
