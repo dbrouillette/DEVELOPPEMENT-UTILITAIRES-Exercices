@@ -3,10 +3,19 @@ import java.time.YearMonth;
 import java.util.Locale;
 import java.util.Scanner;
 
-// Fichier contenant les exercices de la semaine 2 du cours Développement d'utilitaires!
-
+/**
+ * The Class Semaine2.
+ */
 public class Semaine2 {
+	
+	/** The Constant TAUX_PRIME. */
 	private final static float TAUX_PRIME = 0.1f;
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		int mois;
 		
@@ -99,6 +108,11 @@ public class Semaine2 {
 	}
 
 	
+	/**
+	 * Question 1.
+	 *
+	 * @param scan the scan
+	 */
 	public static void Question1(Scanner scan) {
 		//Faire un programme permettant de calculer la prime du courtier d’assurance 
 		//qui correspond à 10% des ventes réalisés
@@ -112,6 +126,11 @@ public class Semaine2 {
 	}
 	
 
+	/**
+	 * Question 2.
+	 *
+	 * @param scan the scan
+	 */
 	public static void Question2(Scanner scan) {
 		//Faire un programme permettant de calculer la moyenne des 3 nombres donnés.
 		int nombre1 = 10, nombre2 = 15, nombre3 = 20;
@@ -120,6 +139,11 @@ public class Semaine2 {
 	}
 
 
+	/**
+	 * Question 3.
+	 *
+	 * @param scan the scan
+	 */
 	public static void Question3(Scanner scan) {
 		//Faire un programme permettant à partir de l'âge du participant, de le laisser passer 
 		//ou si son âge est plus grand que 18 ans et de le refuser s’il s’agit d’un mineur.
@@ -133,6 +157,11 @@ public class Semaine2 {
 	}
 
 	
+	/**
+	 * Question 4.
+	 *
+	 * @param scan the scan
+	 */
 	public static void Question4(Scanner scan) {
 		/*
 		 	Faire un programme permettant de calculer, à partir de l'âge du participant, le prix d’entré dans l’établissement. 
@@ -156,6 +185,12 @@ public class Semaine2 {
 		}
 	}
 
+	/**
+	 * Question 5 mois francais.
+	 *
+	 * @param scan the scan
+	 * @param numero_mois the numero mois
+	 */
 	public static void Question5_Mois_Francais(Scanner scan, int numero_mois) {
 		/*
 			Faire un programme qui permet d’afficher le mois de naissance lorsque vous donnez la valeur numérique équivalente:
@@ -207,6 +242,12 @@ public class Semaine2 {
 		System.out.println(nom_mois);
 	}
 
+	/**
+	 * Question 6 mois anglais.
+	 *
+	 * @param scan the scan
+	 * @param numero_mois the numero mois
+	 */
 	public static void Question6_Mois_Anglais(Scanner scan, int numero_mois) {
 		/*
 			Faire un programme qui permet d’afficher un mois lorsque vous donnez la valeur numérique équivalente:
@@ -261,6 +302,11 @@ public class Semaine2 {
 
 	
 	
+	/**
+	 * Maximum d'un nombre.
+	 *
+	 * @param scan the scan
+	 */
 	public static void MaximumNombre(Scanner scan) {
 		//Faire un programme permettant de déterminer le plus grand nombre et le plus petit des 3 nombres présentés. 
 		System.out.print("Nombre 1: ");
@@ -303,6 +349,11 @@ public class Semaine2 {
 
 	
 	
+	/**
+	 * Statistiques de 3 nombres.
+	 *
+	 * @param scan the scan
+	 */
 	public static void Statistiques3Nombre(Scanner scan) {
 		/*
 		  Faire un programme permettant de calculer la somme et la moyenne des 3 nombres présentés.
@@ -327,6 +378,11 @@ public class Semaine2 {
 		System.out.println("La somme est " + somme + " et la moyenne est " + moyenne);
 	}
 	
+	/**
+	 * Prix du hamburger.
+	 *
+	 * @param scan the scan
+	 */
 	public static void PrixDuHamburger(Scanner scan) {
 
 		/*
@@ -359,6 +415,11 @@ public class Semaine2 {
 
 
 
+	/**
+	 * Calcul de cote.
+	 *
+	 * @param scan the scan
+	 */
 	public static void CalculDeCote(Scanner scan) {
 
 		/*
@@ -400,6 +461,11 @@ public class Semaine2 {
 	}
 
 	
+	/**
+	 * Admissibilite à un examen.
+	 *
+	 * @param scan the scan
+	 */
 	public static void AdmissibiliteExamen(Scanner scan) {
 		/*
 		 * Faire un programme permettant de valider si un étudiant est admissible à l’examen synthèse.
@@ -422,6 +488,11 @@ public class Semaine2 {
 	}
 
 	
+	/**
+	 * Admissibilite à un examen 2.
+	 *
+	 * @param scan the scan
+	 */
 	public static void AdmissibiliteExamen2(Scanner scan) {
 		/*
 		 * Faire un programme permettant de valider si un étudiant est admissible à l’examen synthèse.
@@ -451,6 +522,11 @@ public class Semaine2 {
 
 	
 	
+	/**
+	 * Information sur un nombre.
+	 *
+	 * @param scan the scan
+	 */
 	public static void InformationSurNombre(Scanner scan) {
 		/*
 		 * Écrivez un programme Java qui lit un nombre et indique s'il est positif, négatif ou s'il vaut zéro 
@@ -481,6 +557,11 @@ public class Semaine2 {
 		
 	}
 
+	/**
+	 * Voyelle ou consonne?.
+	 *
+	 * @param scan the scan
+	 */
 	public static void VoyelleOuConsonne(Scanner scan) {
 		/*
 		 * Faire un programme qui lit un caractère et qui permet d’identifier s’il s’agit d’une consonne 
@@ -504,6 +585,11 @@ public class Semaine2 {
 		
 	}
 	
+	/**
+	 * Statistiques automobile.
+	 *
+	 * @param scan the scan
+	 */
 	public static void StatistiquesAuto(Scanner scan) {
 		/*
 			Faire un programme posant les questions suivantes:
@@ -539,6 +625,11 @@ public class Semaine2 {
 	}
 	
 	
+	/**
+	 * Calcul nombre de pots.
+	 *
+	 * @param scan the scan
+	 */
 	public static void CalculNombrePots(Scanner scan) {
 		/*
 			Vous devez faire un programme qui devra calculer le nombre de pots de peinture à se procurer 
@@ -557,6 +648,11 @@ public class Semaine2 {
 	}
 	
 		
+	/**
+	 * Roche papier ciseau.
+	 *
+	 * @param scan the scan
+	 */
 	public static void RochePapierCiseau(Scanner scan) {
 		/*
 			Il se joue entre deux joueurs, en général avec les mains. Simultanément, les deux joueurs font un signe avec les mains qui représente soit une roche, soit des ciseaux, soit un papier.
@@ -598,6 +694,11 @@ public class Semaine2 {
 	
 	}
 	
+	/**
+	 * Nombre premier.
+	 *
+	 * @param scan the scan
+	 */
 	public static void NombrePremier(Scanner scan) {
 		
 		/*
@@ -628,6 +729,11 @@ public class Semaine2 {
 	}
 
 	
+	/**
+	 * Nombre de jours par mois.
+	 *
+	 * @param scan the scan
+	 */
 	public static void NombreDeJoursParMois(Scanner scan) {
 		/*
 		 * Faire un programme permettant de déterminer le nombre de jours dans le mois
@@ -668,6 +774,11 @@ public class Semaine2 {
 		System.out.format("Le nombre de jour est de %d jours.", nbJours);
 	}
 
+	/**
+	 * Nombre de jours par mois (version infaillible).
+	 *
+	 * @param scan the scan
+	 */
 	public static void NombreDeJoursParMoisInfaillible(Scanner scan) {
 		System.out.print("Inscrire le mois: ");
 		int mois = Integer.parseInt(scan.nextLine());
