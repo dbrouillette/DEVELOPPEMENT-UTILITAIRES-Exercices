@@ -78,7 +78,15 @@ public class Semaine3 {
 		System.out.println("Comme avec des for...:");
 		for(int i = 1; i <= nbLignes; i++) {
 			for(int j=1; j <= nbColonnes; j++) {
-				System.out.print("* ");
+				if(i == 1 || i == nbLignes) {
+					System.out.print("* ");
+				}else {
+					if(j==1 || j == nbColonnes) {
+						System.out.print("* ");
+					}else {
+						System.out.print("  ");
+					}
+				}
 			}
 			System.out.print("\n");// on change de ligne après toutes les colonnes
 		}
@@ -134,4 +142,26 @@ public class Semaine3 {
 		
 	}
 
+
+	public final static void DessinerUnCarreVide(Scanner scan) {
+		System.out.print("Bonjour, veuillez indiquer le nombre de lignes: ");
+		int nbLignes = Integer.parseInt(scan.nextLine());
+		int nbColonnes = nbLignes; // c'est pareil, ici c'est un carré...
+
+		for(int i = 1; i <= nbLignes; i++) {
+			for(int j=1; j <= nbColonnes; j++) {
+				if(i == 1 || i == nbLignes) {
+					System.out.print("* ");
+				}else {
+					if(j==1 || j == nbColonnes) {
+						System.out.print("* ");
+					}else {
+						System.out.print("  ");
+					}
+				}
+			}
+			System.out.print("\n");// on change de ligne après toutes les colonnes
+		}
+	}
+	
 }

@@ -196,6 +196,12 @@ public class Semaine2 {
 			Faire un programme qui permet d’afficher le mois de naissance lorsque vous donnez la valeur numérique équivalente:
 		*/
 
+		
+
+		
+		
+		
+		
 		String nom_mois = "";
 		switch(numero_mois) {
 		case 1:
@@ -725,6 +731,8 @@ public class Semaine2 {
 
         String type_nombre = (estNombrePremier) ? "premier" : "pas un nombre premier";
     	System.out.format("Le nombre est %s.", type_nombre);
+    	
+    	
         
 	}
 
