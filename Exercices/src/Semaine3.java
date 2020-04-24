@@ -28,6 +28,9 @@ public class Semaine3 {
 		case 3:
 			DessinerUnTriangleRectangle(scan);
 			break;
+		case 4:
+			InverserNombres(scan);
+			break;
 		default:
 			System.out.println("Ceci est un mauvais choix!");
 		}
@@ -161,6 +164,17 @@ public class Semaine3 {
 				}
 			}
 			System.out.print("\n");// on change de ligne après toutes les colonnes
+		}
+	}
+	
+	// routine pour inverser le nombre
+	public static void InverserNombres(Scanner scan) {
+		int nombre = Integer.parseInt(scan.nextLine()); // lecture du nombre par l'utilisateur
+
+		String texte_du_nombre = Integer.toString(nombre); // conversion du nombre en string
+		
+		for(int i = texte_du_nombre.length() -1; i >= 0; i--) {
+			System.out.print(texte_du_nombre.charAt(i));
 		}
 	}
 	
