@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * The Class Semaine2.
+ * Auteur: David Brouillette
  */
 public class Semaine2 {
 	
@@ -800,4 +801,6 @@ public class Semaine2 {
 
 	}
 
+	
+	
 }
