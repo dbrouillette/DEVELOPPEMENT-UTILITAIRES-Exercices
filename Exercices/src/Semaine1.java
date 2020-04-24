@@ -32,7 +32,7 @@ public class Semaine1 {
 		//		Écrire un programme permettant de calculer l’aire ainsi que le périmètre d’un cercle à partir de différentes valeurs.
 		double rayon = 7.5d;
 		double resultat_perimetre = (2 * Math.PI * rayon);
-		double resultat_aire = Math.pow(rayon,rayon) * Math.PI;
+		double resultat_aire = Math.pow(rayon,2) * Math.PI;
 		System.out.println("Périmèetre= " + resultat_aire + " Aire= " + resultat_aire);
 		
 //		Écrire un programme permettant d’afficher le résultat des opérations suivantes:
