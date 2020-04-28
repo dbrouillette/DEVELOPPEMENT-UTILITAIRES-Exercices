@@ -177,7 +177,23 @@ public class Semaine3 {
 		for(int i =  nombre_de_cases -1; i >= 0; i--) {
 			System.out.print(texte_du_nombre.charAt(i));
 		}
+	}
+	
+	// routine pour inverser les nombres (Méthode d'Anthony)
+	public static void InverserNombres_MethodeAnthony() {
+		int nombre, reverse = 0;
+		System.out.println("Quel est votre nombre");
+
+		try (Scanner in = new Scanner(System.in)) {
+			nombre = in.nextInt(); 
+		} 
+		while(nombre !=0) {
+			reverse = reverse * 10;
+			reverse = reverse + nombre%10;
+			nombre = nombre/10;
+		} 
 		
+		System.out.println("Votre nombre inversé est " + reverse); 
 	}
 	
 }
