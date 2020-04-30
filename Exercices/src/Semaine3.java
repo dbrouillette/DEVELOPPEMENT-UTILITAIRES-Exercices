@@ -30,6 +30,7 @@ public class Semaine3 {
 			break;
 		case 4:
 			InverserNombres(scan);
+			InverserNombres_MethodeAnthony();
 			break;
 		default:
 			System.out.println("Ceci est un mauvais choix!");
@@ -81,15 +82,7 @@ public class Semaine3 {
 		System.out.println("Comme avec des for...:");
 		for(int i = 1; i <= nbLignes; i++) {
 			for(int j=1; j <= nbColonnes; j++) {
-				if(i == 1 || i == nbLignes) {
 					System.out.print("* ");
-				}else {
-					if(j==1 || j == nbColonnes) {
-						System.out.print("* ");
-					}else {
-						System.out.print("  ");
-					}
-				}
 			}
 			System.out.print("\n");// on change de ligne après toutes les colonnes
 		}
