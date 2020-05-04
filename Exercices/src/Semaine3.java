@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Semaine3.
+ * The Class Semaine3 - Boucles.
  */
 public class Semaine3 {
 
@@ -12,7 +11,6 @@ public class Semaine3 {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// Initialisation du scanner
 		Scanner scan = new Scanner(System.in);
 
@@ -31,6 +29,11 @@ public class Semaine3 {
 		case 4:
 			InverserNombres(scan);
 			InverserNombres_MethodeAnthony();
+			break;
+		case 5:
+			TableDeMultiplicationsSimple(scan);
+			TableDeMultiplicationsProfessionnelle(scan);
+			TableDeMultiplicationsProfessionnelleEtTableau(scan);
 			break;
 		default:
 			System.out.println("Ceci est un mauvais choix!");
@@ -138,7 +141,11 @@ public class Semaine3 {
 		
 	}
 
-
+	/**
+	 * Dessiner un carre vide.
+	 *
+	 * @param scan the scan
+	 */
 	public final static void DessinerUnCarreVide(Scanner scan) {
 		System.out.print("Bonjour, veuillez indiquer le nombre de lignes: ");
 		int nbLignes = Integer.parseInt(scan.nextLine());
@@ -160,7 +167,11 @@ public class Semaine3 {
 		}
 	}
 	
-	// routine pour inverser le nombre
+	/**
+	 * Inverser nombres.
+	 *
+	 * @param scan the scan
+	 */
 	public static void InverserNombres(Scanner scan) {
 		int nombre = Integer.parseInt(scan.nextLine()); // lecture du nombre par l'utilisateur
 
@@ -172,14 +183,17 @@ public class Semaine3 {
 		}
 	}
 	
-	// routine pour inverser les nombres (Méthode d'Anthony)
+	/**
+	 * Inverser nombres methode anthony.
+	 */
 	public static void InverserNombres_MethodeAnthony() {
 		int nombre, reverse = 0;
 		System.out.println("Quel est votre nombre");
 
-		try (Scanner in = new Scanner(System.in)) {
-			nombre = in.nextInt(); 
-		} 
+		int monnombre = 10;
+		
+		Scanner in = new Scanner(System.in);
+		nombre = in.nextInt(); 
 		while(nombre !=0) {
 			reverse = reverse * 10;
 			reverse = reverse + nombre%10;
@@ -187,6 +201,116 @@ public class Semaine3 {
 		} 
 		
 		System.out.println("Votre nombre inversé est " + reverse); 
+	}
+
+	
+	/**
+	 * Inverser nombres methode récursive.
+	 *
+	 * @param nombre the nombre
+	 */
+	public static void InverserNombres_MethodeRecursive(int nombre) {
+		int nombre1, reverse = 0;
+		System.out.println("Quel est votre nombre");
+
+		int monnombre = 10;
+		
+		try (Scanner in = new Scanner(System.in)) {
+			nombre1 = in.nextInt(); 
+		} 
+		while(nombre1 !=0) {
+			reverse = reverse * 10;
+			reverse = reverse + nombre1%10;
+			nombre1 = nombre1/10;
+		} 
+		
+		System.out.println("Votre nombre inversé est " + reverse); 
+	}
+
+	
+	/**
+	 * Table de multiplications simple.
+	 *
+	 * @param scan the scan
+	 */
+	public static void TableDeMultiplicationsSimple(Scanner scan) {
+		System.out.print("Combien de lignes voulez-vous calculer?");
+		int nb_lignes = Integer.parseInt(scan.nextLine()); // lecture du nombre par l'utilisateur
+
+		for(int i =1; i <= nb_lignes; i++) {
+			for(int j = 1; j <= nb_lignes; j++) {
+				System.out.print(i*j + " ");
+			}
+
+			// fin de la ligne i, on change donc de ligne avec un println vide
+			System.out.println(""); 
+		}
+	}
+
+
+	/**
+	 * Table de multiplications professionnelle.
+	 *
+	 * @param scan the scan
+	 */
+	public static void TableDeMultiplicationsProfessionnelle(Scanner scan) {
+		System.out.print("Combien de lignes voulez-vous calculer?");
+		int nb_lignes = Integer.parseInt(scan.nextLine()); // lecture du nombre par l'utilisateur
+
+		for(int i =1; i <= nb_lignes; i++) {
+			for(int j = 1; j <= nb_lignes; j++) {
+				System.out.format("%03d ",i*j);
+			}
+
+			// fin de la ligne i, on change donc de ligne avec un println vide
+			System.out.println(""); 
+		}
+	}
+
+	
+	/**
+	 * Table de multiplications professionnelle et tableau.
+	 *
+	 * @param scan the scan
+	 */
+	public static void TableDeMultiplicationsProfessionnelleEtTableau(Scanner scan) {
+		System.out.print("Combien de lignes voulez-vous calculer?");
+		int nb_lignes = Integer.parseInt(scan.nextLine()); // lecture du nombre par l'utilisateur
+
+		GenereLigneSeparatrice(nb_lignes);
+		
+		for(int i =1; i <= nb_lignes; i++) {
+			for(int j = 1; j <= nb_lignes; j++) {
+				// si on est sur la première colonne, on affiche le premier |, 
+				//sinon, il se mettra automatiquement lors de l'impression du résultat du calcul
+				if(j == 1) {
+					System.out.print("|");
+				}
+				System.out.format(" %03d |",i*j);
+			}
+
+			// fin de la ligne i, on change donc de ligne avec un println vide
+			System.out.println(""); 
+		}
+		
+		GenereLigneSeparatrice(nb_lignes);
+
+	}
+
+	/**
+	 * Genere ligne separatrice.
+	 *
+	 * @param nb_colonnes the nb colonnes
+	 */
+	private static void GenereLigneSeparatrice(int nb_colonnes) {
+		// pour chacune des colonnes, on ajoute 4 tirets (----)
+		// ceci permet d'ajuster automatiquement la largeur de la ligne
+		for(int i = 1; i<= nb_colonnes; i++) {
+			System.out.print("------");
+		}
+
+		// on change de ligne
+		System.out.println("");
 	}
 	
 }
