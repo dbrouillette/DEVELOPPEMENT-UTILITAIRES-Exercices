@@ -269,7 +269,7 @@ public class Semaine3 {
 
 	
 	/**
-	 * Table de multiplications professionnelle et tableau.
+	 * Table de multiplications professionnelle et sous forme de tableau.
 	 *
 	 * @param scan the scan
 	 */
