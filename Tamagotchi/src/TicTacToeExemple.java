@@ -82,6 +82,15 @@ public class TicTacToeExemple {
 		//if(bas_gauche == Possibilites.JOUEUR_A && bas_centre == Possibilites.JOUEUR_A && bas_droit == Possibilites.JOUEUR_A) {
 		//	System.out.println("X a gagné...");
 		//}
+		
+		int valeur = 65;
+
+		int tauxSucre = Math.min(100, valeur);
+		System.out.println("Taux de sucre" + tauxSucre);
+		
+		
+		int choix_menu = AfficherMenu();
+		
 	}
 	
 	
@@ -118,6 +127,12 @@ public class TicTacToeExemple {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Votre choix svp?:");
 		int valeur_de_retour = Integer.parseInt(scan.nextLine());
+		
+		do {
+			System.out.println("Mauvais choix, veuillez réessayer!");
+			valeur_de_retour = Integer.parseInt(scan.nextLine());
+
+		} while(valeur_de_retour > 4);
 		
 		
 		return valeur_de_retour;
