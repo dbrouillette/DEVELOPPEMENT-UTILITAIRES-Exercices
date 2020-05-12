@@ -5,6 +5,9 @@ public class Jeu {
 	private final static int NB_BATTEMENTS_DIMINUER_HYDRATATION = 240;
 	private final static int NB_BATTEMENTS_DIMINUER_CALORIE = 1000;
 	
+	private static int maVariable = 10;
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
