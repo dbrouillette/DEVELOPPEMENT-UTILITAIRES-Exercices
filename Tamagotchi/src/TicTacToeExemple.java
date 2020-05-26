@@ -47,6 +47,7 @@ public class TicTacToeExemple {
 		System.out.format("| %s | %s | %s |", AfficherCase(milieu_gauche), AfficherCase(milieu_centre), AfficherCase(milieu_droit));
 		System.out.format("| %s | %s | %s |", AfficherCase(bas_gauche), AfficherCase(bas_centre), AfficherCase(bas_droit));
 		
+		// TODO : Ceci est un test..
 
 		// exemple d'un affiche de tableau TICTACTOE
 		//		X O X
