@@ -77,7 +77,7 @@ public class Exercices_Tableaux {
 
 			// on doit prendre une copie du tableau pour éviter de trier l'original...
 			copie_tableau = TABLEAU_B.clone();
-			TrierTableau_MethodeLonge_BubbleSort(copie_tableau);
+			TrierTableau_MethodeLongue_BubbleSort(copie_tableau);
 
 			break;
 		case 9:
