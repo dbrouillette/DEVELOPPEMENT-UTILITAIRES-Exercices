@@ -5,10 +5,10 @@ public class Programme {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		// partie humain
+		
 		Personnage sylvie = new PersonnagePrincesse();
 		sylvie.setNom("ici c'est sylvie!");
-		
-		
 		
 		Personnage bowser = new PersonnageBowser();
 		bowser.setNom("bowser's here!");
@@ -28,6 +28,8 @@ public class Programme {
 			System.out.println("---------------------------------------------------");
 			
 		}
+		
+		// partie humain
 		
 		
 		Humain humain1 = new Humain();
